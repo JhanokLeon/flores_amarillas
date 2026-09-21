@@ -8,13 +8,15 @@
 </head>
 <body>
 
-  <!-- Audio de fondo (puedes reemplazar src por tu propio archivo local musica.mp3) -->
+  <!-- Audio local -->
   <audio id="bgAudio" loop preload="auto">
-    <!-- Fuente local recomendada (guarda tu cancion favorita como musica.mp3) -->
     <source src="musica.mp3" type="audio/mpeg">
-    <!-- Respaldo musical acústico en línea -->
-    <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-piano-112199.mp3" type="audio/mpeg">
   </audio>
+
+  <!-- Control flotante de audio (opcional, en esquina superior derecha) -->
+  <button id="audioToggle" class="audio-control" style="display: none;" title="Pausar / Reanudar">
+    🎵
+  </button>
 
   <!-- Pantalla de bienvenida / Disparador de interacción -->
   <div class="welcome-screen" id="welcomeScreen">
