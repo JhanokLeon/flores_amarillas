@@ -2,19 +2,39 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jardín de Flores Amarillas | Interactivo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Flores Amarillas 🌻</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="overlay">
-    <div class="glass-card">
-      <h1 class="glow-text">Para Ti 🌻</h1>
-      <p id="typewriter"></p>
-      <button id="btnBloom">Hacer florecer</button>
+
+  <!-- Audio de fondo (puedes reemplazar src por tu propio archivo local musica.mp3) -->
+  <audio id="bgAudio" loop preload="auto">
+    <!-- Fuente local recomendada (guarda tu cancion favorita como musica.mp3) -->
+    <source src="musica.mp3" type="audio/mpeg">
+    <!-- Respaldo musical acústico en línea -->
+    <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-piano-112199.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Pantalla de bienvenida / Disparador de interacción -->
+  <div class="welcome-screen" id="welcomeScreen">
+    <div class="glass-box">
+      <div class="seed-icon">🌻</div>
+      <h2>Un detalle especial</h2>
+      <p>Diseñado especialmente para iluminar este día.</p>
+      <button id="btnStart" class="btn-glow">
+        <span>Presiona para recibirlo ✨</span>
+      </button>
     </div>
   </div>
 
+  <!-- Mensaje flotante superior (aparece luego de florecer) -->
+  <div class="floating-header" id="floatingHeader">
+    <h1 class="glow-title">🌻 Para Ti 🌻</h1>
+    <p id="subMessage">Que nunca te falten razones para sonreír</p>
+  </div>
+
+  <!-- Lienzo interactivo -->
   <canvas id="gardenCanvas"></canvas>
 
   <script src="js/script.js"></script>
