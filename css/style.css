@@ -149,3 +149,39 @@ html, body {
     font-size: 0.9rem;
   }
 }
+
+/* Burbuja de diálogo para el Easter Egg de la Manzanilla */
+.easter-bubble {
+  position: absolute;
+  z-index: 30;
+  background: rgba(255, 255, 255, 0.92);
+  color: #2c3e50;
+  padding: 10px 16px;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  max-width: 210px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 15px rgba(255, 215, 0, 0.5);
+  border: 2px solid #ffd700;
+  transform: translate(-50%, -120%) scale(0);
+  animation: popBubble 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  pointer-events: none;
+}
+
+.easter-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 9px 8px 0;
+  border-style: solid;
+  border-color: #ffd700 transparent transparent;
+}
+
+@keyframes popBubble {
+  to {
+    transform: translate(-50%, -120%) scale(1);
+  }
+}
